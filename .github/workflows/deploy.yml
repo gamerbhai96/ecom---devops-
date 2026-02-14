@@ -1,0 +1,58 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Deploy via SSH
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.address }}
+        username: ubuntu
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          mkdir -p ~/deploy-quickcart
+          cat > ~/deploy-quickcart/deploy.sh << 'EOF'
+          #!/bin/bash
+
+          # Navigate to the deployment directory for this app
+          # Ensure this directory is distinct from other apps
+          cd /home/ubuntu
+          mkdir -p quickcart-live
+
+          # Pull the latest code
+          if [ -d "quickcart-live/.git" ]; then
+              cd quickcart-live
+              git pull origin main
+          else
+              rm -rf quickcart-live
+              git clone https://github.com/gamerbhai96/ecom---devops-.git quickcart-live
+              cd quickcart-live
+          fi
+
+          # Build and run the Docker container
+          # Using different names/ports to avoid conflicts
+          sudo docker build -t quickcart .
+          sudo docker stop quickcart-container || true
+          sudo docker rm quickcart-container || true
+          # Running on port 80 mapped to container port 5000 (Express server)
+          sudo docker run -d --name quickcart-container -p 80:5000 quickcart
+
+          # Wait a moment and check if container is running
+          sleep 5
+          sudo docker ps | grep quickcart-container
+          sudo docker logs quickcart-container
+
+          echo "Deployment of QuickCart completed successfully!"
+          EOF
+          chmod +x ~/deploy-quickcart/deploy.sh
+          ~/deploy-quickcart/deploy.sh
