@@ -7,7 +7,7 @@ const banners = [
         bgColor: "linear-gradient(135deg, #0C831F 0%, #16a34a 100%)",
         textColor: "#fff",
         tag: "FRESH DEALS",
-        image: "https://cdn-icons-png.flaticon.com/512/2153/2153786.png"
+        image: "https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=600&h=400&fit=crop"
     },
     {
         id: "banner-2",
@@ -17,7 +17,7 @@ const banners = [
         bgColor: "linear-gradient(135deg, #7C3AED 0%, #A855F7 100%)",
         textColor: "#fff",
         tag: "DAILY NEEDS",
-        image: "https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+        image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&h=400&fit=crop"
     },
     {
         id: "banner-3",
@@ -27,7 +27,7 @@ const banners = [
         bgColor: "linear-gradient(135deg, #EA580C 0%, #F97316 100%)",
         textColor: "#fff",
         tag: "MEGA OFFER",
-        image: "https://cdn-icons-png.flaticon.com/512/2553/2553691.png"
+        image: "https://images.unsplash.com/photo-1621447504864-d8686e12698c?w=600&h=400&fit=crop"
     },
     {
         id: "banner-4",
@@ -37,7 +37,7 @@ const banners = [
         bgColor: "linear-gradient(135deg, #0284C7 0%, #38BDF8 100%)",
         textColor: "#fff",
         tag: "COOL DEALS",
-        image: "https://cdn-icons-png.flaticon.com/512/3076/3076070.png"
+        image: "https://images.unsplash.com/photo-1544145945-f904253dc0ad?w=600&h=400&fit=crop"
     },
     {
         id: "banner-5",
@@ -47,7 +47,7 @@ const banners = [
         bgColor: "linear-gradient(135deg, #0D9488 0%, #2DD4BF 100%)",
         textColor: "#fff",
         tag: "HOME CARE",
-        image: "https://cdn-icons-png.flaticon.com/512/995/995016.png"
+        image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop"
     }
 ];
 
@@ -56,7 +56,7 @@ const deals = [
         id: "deal-1",
         title: "Fruits & Vegetables",
         discount: "UP TO 40% OFF",
-        image: "https://cdn-icons-png.flaticon.com/512/2153/2153786.png",
+        image: "https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=300&h=300&fit=crop",
         bgColor: "#E8F5E9",
         expiresIn: 7200
     },
@@ -64,7 +64,7 @@ const deals = [
         id: "deal-2",
         title: "Dairy Products",
         discount: "UP TO 25% OFF",
-        image: "https://cdn-icons-png.flaticon.com/512/3050/3050158.png",
+        image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=300&h=300&fit=crop",
         bgColor: "#FFF3E0",
         expiresIn: 5400
     },
@@ -72,7 +72,7 @@ const deals = [
         id: "deal-3",
         title: "Instant Food",
         discount: "BUY 2 GET 1",
-        image: "https://cdn-icons-png.flaticon.com/512/1046/1046747.png",
+        image: "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=300&h=300&fit=crop",
         bgColor: "#FCE4EC",
         expiresIn: 3600
     },
@@ -80,7 +80,7 @@ const deals = [
         id: "deal-4",
         title: "Chocolates",
         discount: "FLAT 30% OFF",
-        image: "https://cdn-icons-png.flaticon.com/512/3014/3014440.png",
+        image: "https://images.unsplash.com/photo-1581798459219-318e76aecc7b?w=300&h=300&fit=crop",
         bgColor: "#F3E5F5",
         expiresIn: 9000
     }
